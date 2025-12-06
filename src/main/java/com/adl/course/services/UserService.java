@@ -18,10 +18,14 @@ public class UserService {
 	public List<User> finAll() {
 		return repository.findAll();
 	}
-	
+
 	public User finById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
+	}
+
+	public User insert(User obj) {
+		return repository.save(obj);
 	}
 
 }
